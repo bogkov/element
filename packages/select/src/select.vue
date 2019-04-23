@@ -106,6 +106,7 @@
       <el-select-menu
         ref="popper"
         :append-to-body="popperAppendToBody"
+        :popper-options="popperOptions"
         v-show="visible && emptyText !== false">
         <el-scrollbar
           tag="ul"
@@ -302,6 +303,13 @@
       popperAppendToBody: {
         type: Boolean,
         default: true
+      },
+      popperOptions: {
+        default() {
+          return {
+            gpuAcceleration: false
+          };
+        }
       }
     },
 
